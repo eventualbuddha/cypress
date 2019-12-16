@@ -613,12 +613,12 @@ module.exports = {
   setUrls: (obj) ->
     obj = _.clone(obj)
 
-    proxyUrl = "http://localhost:" + obj.port
+    proxyUrl = "http://127.0.0.1:" + obj.port
 
     rootUrl = if obj.baseUrl
       origin(obj.baseUrl)
     else
-      proxyUrl
+      "http://localhost:" + obj.port
 
     _.extend(obj, {
       proxyUrl:    proxyUrl
